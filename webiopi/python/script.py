@@ -12,12 +12,12 @@ GPIO = webiopi.GPIO
 # -------------------------------------------------- #
 
 # Left motor GPIOs
-L1=7
-L2=8
+L1=9
+L2=10
 
 # Right motor GPIOs
-R1=9
-R2=10
+R1=7
+R2=8
 
 # -------------------------------------------------- #
 # Left Motor Functions                               #
