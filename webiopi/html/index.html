@@ -5,7 +5,33 @@
 	<meta name="viewport" content = "height = device-height, width = 420, user-scalable = no" /> 
 	<title>CamBot</title>
 	<script type="text/javascript" src="/webiopi.js"></script>
+	<style type="text/css">
+		button {
+			margin: 5px 5px 5px 5px;
+			width: 50px;
+			height: 50px;
+			font-size: 24pt;
+			font-weight: bold;
+			color: black;
+		}
+	</style>
+</head>
+<body>
+
+	<section style="border-style: solid; border-width: 2px; width: 500px;">
+		<canvas WIDTH="500" HEIGHT="400" ID="canvas_1" tabindex="0">
+			Canvas tag not supported
+		</canvas>
+
+		<div id="content" align="center">
+			<div id="up"></div>
+			<div id="middle"></div>
+			<div id="down"></div>
+		</div>
+	</section>
+
 	<script type="text/javascript">
+
 	function init() {
 		var button;
 			
@@ -46,24 +72,27 @@
 	}
 	
 	webiopi().ready(init);
-		
-	</script>
-	<style type="text/css">
-		button {
-			margin: 5px 5px 5px 5px;
-			width: 50px;
-			height: 50px;
-			font-size: 24pt;
-			font-weight: bold;
-			color: black;
+
+	var canvas = document.getElementById("canvas_1");
+	canvas.addEventListener('keydown', doKeyDown, true);
+
+	function doKeyDown(e) {
+		if (e.keyCode == 38) {
+			go_forward();
 		}
-	</style>
-</head>
-<body>
-	<div id="content" align="center">
-		<div id="up"></div>
-		<div id="middle"></div>
-		<div id="down"></div>
-	</div>
+		if (e.keyCode == 40) {
+			go_backward();
+		}
+		if (e.keyCode == 37) {
+			turn_left();
+		}
+		if (e.keyCode == 39) {
+			turn_right();
+		}
+		if (e.keyCode == 32) {
+			stop();
+		}
+	}
+	</script>
 </body>
 </html>
