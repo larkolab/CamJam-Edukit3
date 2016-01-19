@@ -29,14 +29,14 @@ $ sudo ./setup.sh
 Edit /etc/webiopi/config to change html page and python script location.
 
 [SCRIPTS]
-# Load custom scripts syntax :
-# name = sourcefile
-#   each sourcefile may have setup, loop and destroy functions and macros
+\# Load custom scripts syntax :
+\# name = sourcefile
+\#   each sourcefile may have setup, loop and destroy functions and macros
 myscript = /home/pi/EduKit3/CamJam-Edukit3/webiopi/python/script.py
 
 et
 
-# Use doc-root to change default HTML and resource files location
+\# Use doc-root to change default HTML and resource files location
 doc-root = /home/pi/EduKit3/CamJam-Edukit3/webiopi/html
 
 2.3) Start
