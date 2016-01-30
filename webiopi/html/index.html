@@ -75,6 +75,7 @@
 
 	var canvas = document.getElementById("canvas_1");
 	canvas.addEventListener('keydown', doKeyDown, true);
+	canvas.addEventListener('keyup', doKeyUp, true);
 
 	function doKeyDown(e) {
 		if (e.keyCode == 38) {
@@ -84,14 +85,18 @@
 			go_backward();
 		}
 		if (e.keyCode == 37) {
-			turn_left();
+			turn_right();
 		}
 		if (e.keyCode == 39) {
-			turn_right();
+			turn_left();
 		}
 		if (e.keyCode == 32) {
 			stop();
 		}
+	}
+
+	function doKeyUp(e) {
+		stop();
 	}
 	</script>
 </body>
